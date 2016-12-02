@@ -71,15 +71,15 @@ package
 
  
 {% highlight xml %}
-&lt;?xml version="1.0"?&gt;
-&lt;s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+<?xml version="1.0"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
                xmlns:s="library://ns.adobe.com/flex/spark"
                xmlns:mx="library://ns.adobe.com/flex/mx"
                xmlns:local="*"
-               viewSourceURL="srcview/index.html"&gt;
+               viewSourceURL="srcview/index.html">
     
-    &lt;fx:Script&gt;
-        &lt;![CDATA[
+    <fx:Script>
+        <![CDATA[
             import spark.events.IndexChangeEvent;
             
             protected function monthnameslist1_changeHandler(event:IndexChangeEvent):void
@@ -94,29 +94,29 @@ package
                 mndd.text = event.currentTarget.selectedItem;
             }
             
-        ]]&gt;
-    &lt;/fx:Script&gt;
+        ]]>
+    </fx:Script>
     
-    &lt;fx:Declarations&gt;
-    &lt;/fx:Declarations&gt;
+    <fx:Declarations>
+    </fx:Declarations>
     
-    &lt;s:Panel title="Month name componts"
+    <s:Panel title="Month name componts"
              width="75%" height="75%"
-             horizontalCenter="0" verticalCenter="0"&gt;
-        &lt;s:VGroup left="10" right="10" top="10" bottom="10"&gt;
+             horizontalCenter="0" verticalCenter="0">
+        <s:VGroup left="10" right="10" top="10" bottom="10">
             
-            &lt;s:HGroup&gt;
-                &lt;s:VGroup&gt;
-                    &lt;local:MonthNamesList change="monthnameslist1_changeHandler(event)"/&gt;
-                    &lt;s:Label id="mnl"/&gt;
-                &lt;/s:VGroup&gt;
-                &lt;s:VGroup&gt;
-                    &lt;local:MonthNamesDropDown change="monthnamesdropdown1_changeHandler(event)"/&gt;
-                    &lt;s:Label id="mndd"/&gt;
-                &lt;/s:VGroup&gt;
-            &lt;/s:HGroup&gt;
-        &lt;/s:VGroup&gt;
-    &lt;/s:Panel&gt;
+            <s:HGroup>
+                <s:VGroup>
+                    <local:MonthNamesList change="monthnameslist1_changeHandler(event)"/>
+                    <s:Label id="mnl"/>
+                </s:VGroup>
+                <s:VGroup>
+                    <local:MonthNamesDropDown change="monthnamesdropdown1_changeHandler(event)"/>
+                    <s:Label id="mndd"/>
+                </s:VGroup>
+            </s:HGroup>
+        </s:VGroup>
+    </s:Panel>
     
-&lt;/s:Application&gt;
+</s:Application>
 {% endhighlight %}

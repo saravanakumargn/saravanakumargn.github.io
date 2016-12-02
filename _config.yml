@@ -23,7 +23,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: saravanakumargn
 github_username:  saravanakumargn
-paginate: 3
+paginate: 10
 paginate_path: "/page:num/"
 # Build settings
 markdown: kramdown
@@ -37,7 +37,7 @@ exclude: [Gemfile, Gemfile.lock, gulpfile.js, package.json, node_modules]
 
 sass:
     style: compressed
-    
+
 # assets:
 #   compress:
 #     css: false

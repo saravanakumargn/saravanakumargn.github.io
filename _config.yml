@@ -36,26 +36,13 @@ gems: [jekyll-feed, jekyll-assets]
 exclude: [Gemfile, Gemfile.lock, gulpfile.js, package.json, node_modules]
 
 # assets:
-#     prefix: "/assets"
-#     digest: false
-#     sources:
-#         - _assets/
-#     compress:
-#         css: false
-
-sass:
-    style: nested
-    line_numbers: true
-    sourcemap: file
-
-assets:
-  compress:
-    css: false
-    js: false
-  prefix: "/assets"
-  assets:
-    - "*.png"
-    - "bundle.css"
-  digest: true
-  sources:
-    - "_assets/folder"    
+#   compress:
+#     css: false
+#     js: false
+#   prefix: "/assets"
+#   assets:
+#     - "*.png"
+#     - "bundle.css"
+#   digest: true
+#   sources:
+#     - "_assets/folder"    

@@ -35,6 +35,9 @@ gems: [jekyll-feed, jekyll-assets]
 #   - Gemfile.lock
 exclude: [Gemfile, Gemfile.lock, gulpfile.js, package.json, node_modules]
 
+sass:
+    style: compressed
+    
 # assets:
 #   compress:
 #     css: false

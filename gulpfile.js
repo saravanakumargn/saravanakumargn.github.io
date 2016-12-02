@@ -11,7 +11,7 @@ const gulp = require('gulp'),
 
 // Set the path variables
 const base_path = './',
-      src = base_path + 'assets',
+      src = base_path + '_assets',
       dist = base_path + 'assets',
       paths = {  
           js: src + '/js/*.js',
@@ -31,7 +31,7 @@ gulp.task('compile-sass', () => {
     }))
     .pipe(sass())
     .pipe(prefixer('last 3 versions', 'ie 9'))
-    // .pipe(minifyCSS())
+    .pipe(minifyCSS())
     .pipe(rename({dirname: dist + '/css'}))
     .pipe(gulp.dest('./'));
 });

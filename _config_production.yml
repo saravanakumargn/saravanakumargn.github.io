@@ -1,4 +1,4 @@
-title: https://saravanakumargn.github.io
-
-sass:
-    style: compressed
+assets:
+  compress:
+    css: true
+    js: true

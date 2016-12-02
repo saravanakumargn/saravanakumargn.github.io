@@ -28,27 +28,34 @@ paginate_path: "/page:num/"
 # Build settings
 markdown: kramdown
 
+gems: [jekyll-feed, jekyll-assets]
 
-gems:
-  - jekyll-feed
-  - jekyll-assets
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+exclude: [Gemfile, Gemfile.lock, gulpfile.js, package.json, node_modules]
 
-assets:
-  skip_baseurl_with_cdn: false
-  skip_prefix_with_cdn: false
-  prefix: "/assets"
-  assets:
-    - "*.png"
-    - "bundle.css"
-  digest: true
-  sources:
-    - "_assets/folder"
+# assets:
+#     prefix: "/assets"
+#     digest: false
+#     sources:
+#         - _assets/
+#     compress:
+#         css: false
 
 sass:
     style: nested
     line_numbers: true
     sourcemap: file
 
-exclude:
-  - Gemfile
-  - Gemfile.lock
+assets:
+  compress:
+    css: false
+    js: false
+  prefix: "/assets"
+  assets:
+    - "*.png"
+    - "bundle.css"
+  digest: true
+  sources:
+    - "_assets/folder"    

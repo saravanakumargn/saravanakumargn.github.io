@@ -25,7 +25,7 @@ twitter_username: saravanakumargn
 github_username:  saravanakumargn
 
 permalink: /blog/:title
-paginate: 5
+paginate: 10
 paginate_path: "/blog/page:num/"
 
 # Build settings

@@ -1,5 +1,7 @@
 // Require all the things
 const gulp = require('gulp'),
+      browserSync = require('browser-sync'),
+      reload      = browserSync.reload,
       sass = require('gulp-sass'),
       gutil = require('gulp-util'),
       plumber = require('gulp-plumber'),
@@ -9,15 +11,17 @@ const gulp = require('gulp'),
       connect = require('gulp-connect');
       cp = require('child_process');
 
+const siteRoot = '_site';
+
 // Set the path variables
 const base_path = './',
-      src = base_path + '_assets',
-      dist = base_path + 'assets',
+      src = base_path + 'assets',
+      dist = base_path,
       paths = {  
           js: src + '/js/*.js',
-          scss: [ src +'/css/*.scss',
-                  src +'/css/**/* .scss',
-                  src +'/css/**/**/*.scss'],
+          scss: [ src +'/scss/*.scss',
+                  src +'/scss/**/* .scss',
+                  src +'/scss/**/**/*.scss'],
           jekyll: ['index.html', '_posts/*', '_layouts/*', '_includes/*' , 'assets/*', 'assets/**/*']
       };
 
@@ -31,32 +35,45 @@ gulp.task('compile-sass', () => {
     }))
     .pipe(sass())
     .pipe(prefixer('last 3 versions', 'ie 9'))
-    .pipe(minifyCSS())
+    // .pipe(minifyCSS())
     .pipe(rename({dirname: dist + '/css'}))
     .pipe(gulp.dest('./'));
 });
 
 // Rebuild Jekyll
-gulp.task('build-jekyll', (code) => {
-  return cp.spawn('jekyll.bat', ['build', '--incremental'], { stdio: 'inherit' }) // Adding incremental reduces build time.
+gulp.task('jekyll-build', (code) => {
+  browserSync.notify('Building Jekyll');
+  return cp.spawn('jekyll.bat', ['build'], { stdio: 'inherit' })
     .on('error', (error) => gutil.log(gutil.colors.red(error.message)))
     .on('close', code);
 })
 
-// Setup Server
-gulp.task('server', () => {
-  connect.server({
-    root: ['_site'],
-    port: 4000
-  });
-})
+// // Setup Server
+// gulp.task('server', () => {
+//   connect.server({
+//     root: ['_site'],
+//     port: 4000
+//   });
+// })
+/**
+ * Wait for jekyll-build, then launch the Server
+ */
+gulp.task('browser-sync', ['jekyll-build'], function() {
+    browserSync({
+        server: {
+            baseDir: '_site'
+        },
+        host: "localhost"
+    });
+});
+
 
 // Watch files
 gulp.task('watch', () => {  
-  // gulp.watch(paths.scss, ['compile-sass']);
-  gulp.watch(paths.jekyll, ['build-jekyll']);
+  gulp.watch(paths.scss, ['compile-sass']);
+  gulp.watch(paths.jekyll, ['jekyll-build']);
 });
 
 // Start Everything with the default task
-// gulp.task('default', [ 'compile-sass', 'build-jekyll', 'server', 'watch' ]);
-gulp.task('default', [ 'build-jekyll', 'server', 'watch' ]);
+gulp.task('default', [ 'compile-sass', 'jekyll-build', 'browser-sync', 'watch' ]);
+// gulp.task('default', [ 'jekyll-build', 'server', 'watch' ]);

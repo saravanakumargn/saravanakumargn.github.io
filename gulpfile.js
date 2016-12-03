@@ -15,12 +15,12 @@ const siteRoot = '_site';
 
 // Set the path variables
 const base_path = './',
-      src = base_path + 'assets',
+      src = base_path,
       dist = base_path,
       paths = {  
           js: src + '/js/*.js',
-          scss: [ src +'/scss/*.scss',
-                  src +'/scss/**/* .scss',
+          scss: [ src +'/css/*.scss',
+                  src +'/_sass/**/* .scss',
                   src +'/scss/**/**/*.scss'],
           jekyll: ['index.html', '_posts/*', '_layouts/*', '_includes/*' , 'assets/*', 'assets/**/*']
       };

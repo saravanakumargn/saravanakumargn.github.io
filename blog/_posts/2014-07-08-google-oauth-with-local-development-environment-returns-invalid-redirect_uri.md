@@ -22,4 +22,4 @@ REDIRECT URIS = http://localhost/smt/web/app_dev.php/login/check-google
 
 as the above. So, now i can able to login through google oauth in my local environment.
 
-[![google-oauth_redirect_url](/img/posts/google-oauth_redirect_url.jpg)](/img/posts/google-oauth_redirect_url.jpg)
+[![google-oauth_redirect_url](/assets/img/posts/google-oauth_redirect_url.jpg)](/assets/img/posts/google-oauth_redirect_url.jpg)

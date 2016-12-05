@@ -15,12 +15,11 @@ frmPUA.popUp
 Code will be like this… (Right click for source download)
 
  
-<pre class="lang:default decode:true " >&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;!-- Simple example to demonstrate the Spark PopUpAnchor component --&gt;
-&lt;s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
-			   xmlns:s="library://ns.adobe.com/flex/spark"&gt;
+{% highlight xml %}
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark">
 	
-	&lt;fx:Style&gt;
+	<fx:Style>
 		.popUpForm
 		{
 			contentBackgroundColor : #FF0000;
@@ -29,9 +28,9 @@ Code will be like this… (Right click for source download)
 			paddingLeft : 2;
 			paddingRight : 2;
 		}
-	&lt;/fx:Style&gt;
-	&lt;fx:Script&gt;
-		&lt;![CDATA[
+	</fx:Style>
+	<fx:Script>
+		<![CDATA[
 			import mx.events.FlexMouseEvent;
 			protected function openBtn_clickHandler(event:MouseEvent):void
 			{
@@ -44,41 +43,42 @@ Code will be like this… (Right click for source download)
 				frmPUA.popUp.removeEventListener(FlexMouseEvent.MOUSE_DOWN_OUTSIDE, menuPopOutside);
 				frmPUA.displayPopUp = false;
 			}
-		]]&gt;
-	&lt;/fx:Script&gt;
-	&lt;s:Panel width="75%" height="75%" title="Click Ooutside popup for close"&gt;
-		&lt;!-- Group with default layout so that openBtn and PopUpAnchor will be on top of
-		each other such that the popUp can be positioned relative to the button --&gt;
-		&lt;s:Group x="10" y="10"&gt;
-			&lt;!-- Button used to open PopUp --&gt;
-			&lt;s:Button id="openBtn" label="Open PopUp" click="openBtn_clickHandler(event)"/&gt;
-			&lt;!-- PopUpAnchor component set to same size as openBtn to ensure that
-			popUp will be positioned relative to the button --&gt;
-			&lt;s:PopUpAnchor id="frmPUA" width="92" height="21" popUpPosition="below"
-						   styleName="popUpForm"&gt;
-				&lt;!-- BorderContainer to hold popUp contents --&gt;
-				&lt;s:BorderContainer&gt;
-					&lt;s:layout&gt;
-						&lt;s:VerticalLayout paddingBottom="5" paddingLeft="5" paddingRight="5"
-										  paddingTop="5"/&gt;
-					&lt;/s:layout&gt;
-					&lt;s:Form&gt;
-						&lt;s:FormItem label="Name :"&gt;
-							&lt;s:TextInput/&gt;
-						&lt;/s:FormItem&gt;
-						&lt;s:FormItem label="E-Mail :"&gt;
-							&lt;s:TextInput/&gt;
-						&lt;/s:FormItem&gt;
-					&lt;/s:Form&gt;
-					&lt;s:HGroup&gt;
-						&lt;!-- Button used to close popUp --&gt;
-						&lt;s:Button label="CLOSE" click="frmPUA.displayPopUp=false"/&gt;
-					&lt;/s:HGroup&gt;
-				&lt;/s:BorderContainer&gt;
-			&lt;/s:PopUpAnchor&gt;
-		&lt;/s:Group&gt;
-	&lt;/s:Panel&gt;
-&lt;/s:Application&gt;</pre> 
+		]]>
+	</fx:Script>
+	<s:Panel width="75%" height="75%" title="Click Ooutside popup for close">
+		<!-- Group with default layout so that openBtn and PopUpAnchor will be on top of
+		each other such that the popUp can be positioned relative to the button -->
+		<s:Group x="10" y="10">
+			<!-- Button used to open PopUp -->
+			<s:Button id="openBtn" label="Open PopUp" click="openBtn_clickHandler(event)"/>
+			<!-- PopUpAnchor component set to same size as openBtn to ensure that
+			popUp will be positioned relative to the button -->
+			<s:PopUpAnchor id="frmPUA" width="92" height="21" popUpPosition="below"
+						   styleName="popUpForm">
+				<!-- BorderContainer to hold popUp contents -->
+				<s:BorderContainer>
+					<s:layout>
+						<s:VerticalLayout paddingBottom="5" paddingLeft="5" paddingRight="5"
+										  paddingTop="5"/>
+					</s:layout>
+					<s:Form>
+						<s:FormItem label="Name :">
+							<s:TextInput/>
+						</s:FormItem>
+						<s:FormItem label="E-Mail :">
+							<s:TextInput/>
+						</s:FormItem>
+					</s:Form>
+					<s:HGroup>
+						<!-- Button used to close popUp -->
+						<s:Button label="CLOSE" click="frmPUA.displayPopUp=false"/>
+					</s:HGroup>
+				</s:BorderContainer>
+			</s:PopUpAnchor>
+		</s:Group>
+	</s:Panel>
+</s:Application>
+{% endhighlight %}
 
 
 Output is like the below.

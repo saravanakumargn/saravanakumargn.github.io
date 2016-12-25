@@ -21,13 +21,7 @@ layout: default
     <p class="post-meta">
     <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: "%b %-d, %Y" }}
-    </time>
-    {% if page.path %}
-      -
-      <a class="post__edit" href="https://github.com/saravanakumargn/saravanakumargn.github.io/blob/master/{{ page.path }}">
-        Edit this page on GitHub
-      </a>
-      {% endif %}    
+    </time> 
     </p>
   </header>
 

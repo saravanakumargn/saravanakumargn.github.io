@@ -18,4 +18,4 @@ Convet text between Lowercase, Uppercase, Title Case, snake case, camel case, SE
 *   Single space text
 *   SEO friendly text
 
-[http://smartmytracker.com/#/caseconvert](http://smartmytracker.com/#/caseconvert "http://smartmytracker.com/#/caseconvert") [Link](http://smartmytracker.com "Convet text between Lowercase, Uppercase, Title Case, snake case, camel case, SEO friendly text")
+<a href="/online-case-converter/" target="_blank" class="card-link">Visit Page</a>

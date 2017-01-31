@@ -257,4 +257,5 @@ INSERT INTO allindiapincode (officename, pincode, officeType, Deliverystatus, di
 
 ----
 ## Thanks
-* [Open Government Data (OGD) Platform India](https://data.gov.in/)
+
+[Open Government Data (OGD) Platform India](https://data.gov.in/)

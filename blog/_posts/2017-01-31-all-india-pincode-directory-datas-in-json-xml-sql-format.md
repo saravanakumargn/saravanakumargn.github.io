@@ -17,15 +17,15 @@ Goto [All-India-Pincode-Directory](https://github.com/saravanakumargn/All-India-
 ## Example formats
 
 ### SQL Format ###
-~~~sql
+{% highlight sql %}
 DROP TABLE allindiapincode;
 CREATE TABLE allindiapincode (officename varchar(50), pincode bigint, officeType varchar(50), Deliverystatus varchar(50), divisionname varchar(50), regionname varchar(50), circlename varchar(50), Taluk varchar(50), Districtname varchar(50), statename varchar(50), Telephone varchar(50), relatedSuboffice varchar(50), relatedHeadoffice varchar(50)) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 INSERT INTO allindiapincode (officename, pincode, officeType, Deliverystatus, divisionname, regionname, circlename, Taluk, Districtname, statename, Telephone, relatedSuboffice, relatedHeadoffice) VALUES ('Achalapur B.O', 504273, 'B.O', 'Delivery', 'Adilabad', 'Hyderabad', 'Andhra Pradesh', 'Asifabad', 'Adilabad', 'TELANGANA', 'NA', 'Rechini S.O', 'Mancherial H.O');
 INSERT INTO allindiapincode (officename, pincode, officeType, Deliverystatus, divisionname, regionname, circlename, Taluk, Districtname, statename, Telephone, relatedSuboffice, relatedHeadoffice) VALUES ('Ada B.O', 504293, 'B.O', 'Delivery', 'Adilabad', 'Hyderabad', 'Andhra Pradesh', 'Asifabad', 'Adilabad', 'TELANGANA', 'NA', 'Asifabad S.O', 'Mancherial H.O');
-~~~
+{% endhighlight %}
 
 ### JSON Format ###
-~~~json
+{% highlight json %}
 [
   {
     "officename": "Achalapur B.O",
@@ -61,10 +61,10 @@ INSERT INTO allindiapincode (officename, pincode, officeType, Deliverystatus, di
     // ... all other datas
   }
 ]
-~~~
+{% endhighlight %}
 
 ### XML Format ###
-~~~xml
+{% highlight xml %}
 <?xml version="1.0" encoding="Cp1252"?>
 
 <TABLE>
@@ -253,7 +253,7 @@ INSERT INTO allindiapincode (officename, pincode, officeType, Deliverystatus, di
     <relatedHeadoffice>Mancherial H.O</relatedHeadoffice>
   </ROW>
 </ROWSET>  
-~~~
+{% endhighlight %}
 
 ----
 ## Thanks
